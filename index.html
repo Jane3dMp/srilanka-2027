@@ -525,16 +525,28 @@ footer{padding:26px 0 40px;font:400 12px/1.6 var(--mono);color:var(--ink3)}
     if(gm.getAttribute('src')!==u)gm.setAttribute('src',u);
   }
   // перезагрузка iframe стоит запроса к Google, поэтому меняем не на каждый пиксель
-  function want(el){
+  function want(el,delay){
     pending=el;
     if(timer)return;
-    timer=setTimeout(function(){timer=null;apply(pending);},320);
+    timer=setTimeout(function(){timer=null;apply(pending);},delay||320);
   }
   window.__syncMap=function(el){
     if(!wide.matches)return;
     if(timer){clearTimeout(timer);timer=null;}
     apply(el);
   };
+
+  // Наведение мышью имеет приоритет над скроллом: курсор показывает, что человек
+  // читает прямо сейчас, точнее, чем положение карточки на экране. Уход курсора
+  // карту не сбрасывает — иначе был бы лишний перезапрос к Google на каждый увод мыши.
+  if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    targets.forEach(function(el){
+      el.addEventListener('mouseenter',function(){
+        if(!wide.matches)return;
+        want(el,200);
+      });
+    });
+  }
 
   var ticking=false;
   function scan(){
