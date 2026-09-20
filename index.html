@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Шри-Ланка 23.02–09.03.2027 — маршрут</title>
+<meta name="description" content="Личный полевой справочник по маршруту Шри-Ланки 23 февраля — 9 марта 2027: четыре базы, 29 точек с координатами, схема маршрута и где ночевать.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#F3F0E8" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#111210" media="(prefers-color-scheme: dark)">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,500;1,7..72,400&display=swap">
+<style>
+:root{
+  --bg:#F3F0E8; --bg2:#FAF8F2; --bg3:#EAE5D8;
+  --ink:#191712; --ink2:#5C554A; --ink3:#867E70;
+  --rule:#CBC2AF; --rule2:#E0D9C8;
+  --c1:#A23C16; --c2:#3C6A18; --c3:#57389F; --c4:#0C647D;
+  --accent:#A23C16;
+  --sea:#DCE6E4;
+  --sans:"Golos Text",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --serif:Literata,Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Consolas,monospace;
+  --gut:max(16px,env(safe-area-inset-left));
+  --gutr:max(16px,env(safe-area-inset-right));
+}
+@media (prefers-color-scheme:dark){
+  :root{
+    --bg:#111210; --bg2:#191A16; --bg3:#22231E;
+    --ink:#ECE8DC; --ink2:#A8A192; --ink3:#837C6D;
+    --rule:#3C3C34; --rule2:#2A2A24;
+    --c1:#FF8A50; --c2:#9FD44A; --c3:#B49CFF; --c4:#4FC7EA;
+    --accent:#FF8A50;
+    --sea:#1A1F21;
+  }
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:16px;line-height:1.5;
+  padding-bottom:env(safe-area-inset-bottom);
+  overflow-wrap:break-word;
+}
+.wrap{max-width:900px;margin:0 auto;padding-left:var(--gut);padding-right:var(--gutr)}
+a{color:inherit}
+h1,h2,h3,h4,h5{margin:0;font-weight:600;line-height:1.16;letter-spacing:-.012em}
+p{margin:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---------- sticky stage rail ---------- */
+.rail{
+  position:sticky;top:0;z-index:40;background:var(--bg);
+  border-bottom:1px solid var(--rule);
+  padding-top:env(safe-area-inset-top);
+}
+.rail ol{
+  display:flex;margin:0;padding:0 var(--gutr) 0 var(--gut);list-style:none;
+  overflow-x:auto;scrollbar-width:none;max-width:900px;margin:0 auto;
+}
+.rail ol::-webkit-scrollbar{display:none}
+.rail li{flex:1 1 0;min-width:0}
+.rail a{
+  display:block;padding:7px 12px 6px;text-decoration:none;white-space:nowrap;
+  border-right:1px solid var(--rule2);
+}
+.rail li:last-child a{border-right:0}
+.rail b{display:block;font:500 12px/1.25 var(--mono);color:var(--ink3)}
+.rail span{display:block;font-size:13px;font-weight:500}
+@media (max-width:470px){
+  .rail a{padding:6px 7px 5px}
+  .rail b{font-size:10.5px;letter-spacing:-.03em}
+  .rail span{font-size:12px;letter-spacing:-.01em}
+}
+.rail li:nth-child(1) a{box-shadow:inset 0 -2px 0 var(--c1)}
+.rail li:nth-child(2) a{box-shadow:inset 0 -2px 0 var(--c2)}
+.rail li:nth-child(3) a{box-shadow:inset 0 -2px 0 var(--c3)}
+.rail li:nth-child(4) a{box-shadow:inset 0 -2px 0 var(--c4)}
+
+/* ---------- header ---------- */
+header.top{border-bottom:2px solid var(--ink);padding:26px 0 0}
+.kicker{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+h1{font-size:clamp(30px,8.4vw,54px);margin:10px 0 0;letter-spacing:-.028em}
+.dates{font:500 clamp(14px,3.6vw,18px)/1.2 var(--mono);color:var(--accent);margin-top:8px}
+.sub{font-family:var(--serif);font-style:italic;font-size:clamp(16px,4.2vw,21px);
+     color:var(--ink2);margin:12px 0 20px;max-width:34em}
+.counts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);
+        margin:0 calc(-1*var(--gut)) 0 calc(-1*var(--gut));padding:0 var(--gut)}
+.counts div{padding:11px 10px 13px;border-right:1px solid var(--rule2)}
+.counts div:last-child{border-right:0}
+.counts b{display:block;font:500 clamp(17px,4.6vw,24px)/1 var(--mono)}
+.counts span{display:block;font-size:11px;line-height:1.28;color:var(--ink2);margin-top:5px}
+@media (max-width:560px){
+  .counts{grid-template-columns:repeat(2,1fr)}
+  .counts div:nth-child(2){border-right:0}
+  .counts div:nth-child(3),.counts div:nth-child(4){border-top:1px solid var(--rule2)}
+}
+
+/* ---------- sections ---------- */
+section.blk{padding:34px 0 8px;border-bottom:1px solid var(--rule)}
+.label{font:500 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;
+       color:var(--ink3);display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.label::after{content:"";flex:1;height:1px;background:var(--rule2)}
+h2{font-size:clamp(21px,5.4vw,29px);margin-bottom:14px}
+
+/* ---------- holidays ---------- */
+.hol{width:100%;border-collapse:collapse;font-size:14px;margin-bottom:22px}
+.hol th,.hol td{text-align:left;padding:9px 10px 9px 0;border-bottom:1px solid var(--rule2);
+                vertical-align:top;font-weight:400}
+.hol thead th{font:500 10px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase;
+              color:var(--ink3);border-bottom:1px solid var(--rule)}
+.hol tbody th{font-weight:500;padding-right:14px}
+.hol .hd{font-family:var(--mono);font-size:13px;white-space:nowrap;padding-right:14px}
+.hol .hs{color:var(--ink2)}
+.hol tr.inside th{color:var(--accent)}
+.hol tr.inside .hs{color:var(--accent)}
+.hol tr.inside .hs::before{content:"▸ ";font-family:var(--mono)}
+@media (max-width:560px){
+  .hol thead{display:none}
+  .hol tr{display:block;border-bottom:1px solid var(--rule2);padding:10px 0}
+  .hol th,.hol td{display:block;border:0;padding:0}
+  .hol tbody th{font-size:15px}
+  .hol .hd{display:inline-block;margin-top:4px;color:var(--ink2)}
+  .hol .hs{display:inline;margin-left:8px}
+}
+.notes{display:grid;gap:1px;background:var(--rule2);border:1px solid var(--rule2);margin-bottom:8px}
+@media (min-width:660px){.notes{grid-template-columns:1fr 1fr}}
+.notes article{background:var(--bg);padding:14px 15px 16px}
+.notes h3{font-size:15px;margin-bottom:6px}
+.notes p{font-family:var(--serif);font-size:14.5px;line-height:1.5;color:var(--ink2)}
+
+/* ---------- maps ---------- */
+.gmap{border:1px solid var(--rule);background:var(--bg3);margin-bottom:12px;line-height:0}
+.gmap iframe{width:100%;height:clamp(230px,48vw,340px);border:0;display:block;filter:saturate(.9)}
+.bigbtn{display:block;text-align:center;text-decoration:none;border:1.5px solid var(--ink);
+        padding:14px 16px;font-weight:600;font-size:15px;margin-bottom:30px;background:var(--bg2)}
+.bigbtn:hover{background:var(--ink);color:var(--bg)}
+.bigbtn span{display:block;font:400 11px/1.3 var(--mono);color:var(--ink3);margin-top:4px;
+             letter-spacing:.04em}
+.bigbtn:hover span{color:var(--bg3)}
+
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.chip{font:500 12px/1 var(--mono);padding:7px 10px;border:1px solid var(--rule);
+      background:transparent;color:var(--ink2);cursor:pointer;display:flex;align-items:center;gap:6px}
+.chip i{width:9px;height:9px;border-radius:50%;background:currentColor;display:block}
+.chip.s1{color:var(--c1)} .chip.s2{color:var(--c2)}
+.chip.s3{color:var(--c3)} .chip.s4{color:var(--c4)}
+.chip[aria-pressed="true"]{border-color:currentColor}
+.chip[aria-pressed="false"]{color:var(--ink3);opacity:.55}
+.chip[aria-pressed="false"] i{background:transparent;box-shadow:inset 0 0 0 1px currentColor}
+
+.schemawrap{border:1px solid var(--rule);background:var(--sea);padding:4px;margin-bottom:10px;
+  overflow-x:auto;-webkit-overflow-scrolling:touch}
+#schema{width:100%;min-width:620px;height:auto;display:block;touch-action:manipulation}
+.land{fill:var(--bg2);stroke:none}
+.coast{fill:none;stroke:var(--ink2);stroke-width:1.4;stroke-linejoin:round}
+.grid{stroke:var(--rule2);stroke-width:1}
+.gridlbl{font:400 11px var(--mono);fill:var(--ink3)}
+.sea{font:400 13px var(--mono);letter-spacing:.34em;fill:var(--ink3);opacity:.75}
+.route{fill:none;stroke:var(--ink2);stroke-width:1.6;stroke-dasharray:7 5;opacity:.85}
+.dot{cursor:pointer}
+.dot .hit{fill:transparent}
+.dot .ring{fill:var(--bg2)}
+.dot .disc{fill:var(--bg2);stroke-width:2}
+.dot text{font:500 13px var(--mono);pointer-events:none}
+.dot.s1 .disc{stroke:var(--c1)} .dot.s1 text{fill:var(--c1)}
+.dot.s2 .disc{stroke:var(--c2)} .dot.s2 text{fill:var(--c2)}
+.dot.s3 .disc{stroke:var(--c3)} .dot.s3 text{fill:var(--c3)}
+.dot.s4 .disc{stroke:var(--c4)} .dot.s4 text{fill:var(--c4)}
+.dot.on .disc,.dot:hover .disc{stroke-width:3}
+.dot.s1.on .disc{fill:var(--c1)} .dot.s2.on .disc{fill:var(--c2)}
+.dot.s3.on .disc{fill:var(--c3)} .dot.s4.on .disc{fill:var(--c4)}
+.dot.on text{fill:var(--bg2)}
+.dot.off{display:none}
+.dot:focus{outline:none}
+.dot:focus-visible .ring{stroke:var(--ink);stroke-width:2}
+.maphint{font:400 12px/1.45 var(--mono);color:var(--ink3);margin-bottom:26px}
+
+/* ---------- stages ---------- */
+.stage{--c:var(--ink);padding-top:30px;scroll-margin-top:58px}
+.stage.s1{--c:var(--c1)} .stage.s2{--c:var(--c2)}
+.stage.s3{--c:var(--c3)} .stage.s4{--c:var(--c4)}
+.stage-h{border-top:2px solid var(--c);padding-top:12px;margin-bottom:6px;scroll-margin-top:60px}
+.stage-meta{display:flex;justify-content:space-between;gap:12px;
+            font:500 12px/1 var(--mono);color:var(--c);letter-spacing:.03em}
+.stage-count{color:var(--ink3)}
+.stage-h h3{font-size:clamp(22px,5.6vw,30px);margin:9px 0 7px}
+.base{font-family:var(--serif);font-size:15.5px;line-height:1.5;color:var(--ink2);max-width:40em}
+.dayband{font:500 12px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+         color:var(--c);border-bottom:1px solid var(--c);padding:22px 0 7px;margin-bottom:0}
+
+/* ---------- point ---------- */
+.pt{display:grid;grid-template-columns:44px 1fr;gap:0 10px;
+    padding:16px 0 18px;border-bottom:1px solid var(--rule2);scroll-margin-top:64px}
+.pt.on{background:var(--bg2);box-shadow:-10px 0 0 var(--bg2),10px 0 0 var(--bg2)}
+.pt.on .num{background:var(--c);color:var(--bg2);border-color:var(--c)}
+.pt-id .num{display:flex;align-items:center;justify-content:center;width:34px;height:34px;
+            border:1px solid var(--c);color:var(--c);font:500 13px var(--mono)}
+.en{font-size:clamp(17px,4.4vw,21px);letter-spacing:-.018em;overflow-wrap:anywhere}
+.ru{font-size:14px;color:var(--ink2);margin-top:3px}
+.tag{display:inline-block;font:500 11px/1 var(--mono);color:var(--c);border:1px solid var(--c);
+     padding:3px 6px;margin-left:6px;vertical-align:1px;white-space:nowrap}
+.d{font-family:var(--serif);font-size:15.5px;line-height:1.56;margin-top:10px;max-width:40em}
+.geo{font:400 12.5px var(--mono);color:var(--ink3);margin-top:9px}
+.acts{display:flex;flex-wrap:wrap;gap:0;margin-top:10px;border:1px solid var(--rule)}
+.acts a,.acts button{flex:1 1 auto;text-align:center;padding:8px 6px;font:500 12.5px var(--mono);
+  text-decoration:none;color:var(--ink2);background:transparent;border:0;
+  border-right:1px solid var(--rule);cursor:pointer;font-family:var(--mono);min-width:88px}
+.acts :last-child{border-right:0}
+.acts a:hover,.acts button:hover{background:var(--c);color:var(--bg2)}
+.acts button.done{color:var(--c)}
+.shot{margin:12px 0 0}
+.shot img{display:block;width:100%;max-width:100%;height:auto;max-height:440px;
+          object-fit:cover;border:1px solid var(--rule2);background:var(--bg3)}
+.shot figcaption{font:400 11px/1.4 var(--mono);color:var(--ink3);margin-top:5px}
+.nophoto{font:400 12px/1.5 var(--mono);color:var(--ink3);margin-top:12px;
+         border-left:2px solid var(--rule);padding-left:10px}
+@media (min-width:720px){
+  .pt-main{display:grid;grid-template-columns:1fr 262px;gap:0 22px;align-items:start}
+  .shot,.nophoto{margin-top:4px}
+}
+@media (max-width:420px){
+  .pt{grid-template-columns:36px 1fr;gap:0 8px}
+  .pt-id .num{width:30px;height:30px;font-size:12px}
+  .acts a,.acts button{min-width:0;flex:1 1 33%}
+}
+
+/* ---------- stays ---------- */
+.stays{margin:20px 0 4px;border:1px solid var(--rule);background:var(--bg2)}
+.stays h5{font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;
+          color:var(--c);padding:11px 14px;border-bottom:1px solid var(--rule)}
+.stays ul{list-style:none;margin:0;padding:0}
+.stays li{padding:11px 14px;border-bottom:1px solid var(--rule2)}
+.stays li:last-child{border-bottom:0}
+.stay-n{font-weight:600;font-size:15px;text-decoration:none;border-bottom:1px solid var(--c);
+        display:inline-block}
+.stay-a{display:block;font:400 12px var(--mono);color:var(--ink3);margin-top:3px}
+.stay-d{display:block;font-family:var(--serif);font-size:14px;color:var(--ink2);margin-top:5px}
+
+/* ---------- checklist & sources ---------- */
+.check{list-style:none;margin:0;padding:0;counter-reset:c}
+.check li{counter-increment:c;display:grid;grid-template-columns:30px 1fr;gap:10px;
+          padding:12px 0;border-bottom:1px solid var(--rule2);font-family:var(--serif);
+          font-size:15.5px;line-height:1.5}
+.check li::before{content:counter(c,decimal-leading-zero);font:500 12px var(--mono);
+                  color:var(--accent);padding-top:4px}
+.src{list-style:none;margin:0;padding:0}
+.src li{border-bottom:1px solid var(--rule2)}
+.src a{display:flex;gap:10px;align-items:baseline;padding:10px 0;text-decoration:none}
+.src a:hover .st{border-bottom-color:var(--accent)}
+.st{font-size:15px;border-bottom:1px solid transparent}
+.sh{font:400 11px var(--mono);color:var(--ink3);margin-left:auto;white-space:nowrap}
+footer{padding:26px 0 40px;font:400 12px/1.6 var(--mono);color:var(--ink3)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+
+<nav class="rail" aria-label="Этапы маршрута"><ol><li><a href="#s-1"><b>23–26.02</b><span>Элла</span></a></li><li><a href="#s-2"><b>26.02–01.03</b><span>Хапутале</span></a></li><li><a href="#s-3"><b>01–04.03</b><span>Нувара-Элия</span></a></li><li><a href="#s-4"><b>04–09.03</b><span>Тангалле</span></a></li></ol></nav>
+
+<div class="wrap">
+<header class="top">
+  <p class="kicker">Полевой справочник · маршрут на двоих</p>
+  <h1>Шри-Ланка</h1>
+  <p class="dates">23.02 — 09.03.2027 · 14 ночей</p>
+  <p class="sub">Сразу в горы, океан в конце.</p>
+  <div class="counts"><div><b>9</b><span>ночей в горах</span></div><div><b>5</b><span>ночей на океане</span></div><div><b>4</b><span>базы</span></div><div><b>HRI</b><span>аэропорт прилёта и вылета</span></div></div>
+</header>
+
+<main>
+
+<section class="blk" id="dates">
+  <p class="label">01 — Календарь</p>
+  <h2>Что попадает в даты</h2>
+  <table class="hol"><caption class="sr">Праздники рядом с датами поездки</caption><thead><tr><th scope="col">Событие</th><th scope="col">Дата</th><th scope="col">Отношение к поездке</th></tr></thead><tbody><tr class=""><th scope="row">Навам-пойя, Навам Перахера в Коломбо</th><td class="hd">20.02</td><td class="hs">за 3 дня до прилёта</td></tr><tr class="inside"><th scope="row">Маха Шиваратри</th><td class="hd">06.03, сб</td><td class="hs">вы будете в Тангалле</td></tr><tr class=""><th scope="row">Ид аль-Фитр, конец Рамадана</th><td class="hd">10.03</td><td class="hs">через день после вылета</td></tr><tr class=""><th scope="row">Медин-пойя</th><td class="hd">22.03</td><td class="hs">после вылета</td></tr></tbody></table>
+  <div class="notes"><article><h3>Ни одной пойи внутри поездки</h3><p>Полнолуния 20 февраля и 22 марта — обе вне дат. Магазины работают, запрета на алкоголь и мясо нет, в храмах и на тропах нет праздничных толп.</p></article><article><h3>Луна: минус нового порядка</h3><p>Новолуние около 7–8 марта. Океанская часть попадает на тёмные ночи. Черепахи в Рекаве выходят круглый год, но на яркую луну шанс выше. Зато небо для звёзд идеальное.</p></article><article><h3>Рамадан</h3><p>Идёт всю поездку. В Хамбантоте и мусульманских посёлках дневные кафе закрыты, вечером работают ифтар-базары.</p></article><article><h3>Погода</h3><p>Февраль–март — сухой сезон для юга и горной страны. В Охии и на Хортон-Плейнс утром холодно, нужна флиска.</p></article></div>
+</section>
+
+<section class="blk" id="map">
+  <p class="label">02 — Карта</p>
+  <h2>Где это всё</h2>
+  <div class="gmap">
+    <iframe src="https://maps.google.com/maps?q=6.5500,81.0000&amp;z=9&amp;output=embed"
+            title="Карта района маршрута" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+  <a class="bigbtn" href="https://www.google.com/maps/dir/6.2844,81.1242/6.8667,81.0466/6.7679,80.9600/6.8158,80.8506/6.9497,80.7891/6.7381,81.1042/6.0236,80.7960/6.2844,81.1242" target="_blank" rel="noopener">
+    Открыть маршрут в Google Maps
+    <span>Маттала → Элла → Хапутале → Охия → Нувара-Элия → Тангалле → Маттала</span>
+  </a>
+
+  <p class="label">Схема по координатам</p>
+  <div class="chips" role="group" aria-label="Показать точки этапа"><button type="button" class="chip s1" data-s="1" aria-pressed="true"><i></i>Элла</button><button type="button" class="chip s2" data-s="2" aria-pressed="true"><i></i>Хапутале</button><button type="button" class="chip s3" data-s="3" aria-pressed="true"><i></i>Нувара-Элия</button><button type="button" class="chip s4" data-s="4" aria-pressed="true"><i></i>Тангалле</button></div>
+  <div class="schemawrap"><svg id="schema" viewBox="0 0 760 800" role="img" aria-label="Схема маршрута по координатам: береговая линия юга Шри-Ланки, линия маршрута и 29 пронумерованных точек" xmlns="http://www.w3.org/2000/svg">
+<path class="land" d="M0.0,727.4 L0.0,727.4 L36.5,741.5 L79.0,739.1 L115.5,755.7 L152.0,741.5 L176.3,729.2 L206.7,721.2 L243.2,692.9 L279.7,679.4 L322.2,656.6 L358.7,646.8 L395.2,640.0 L437.8,631.4 L480.3,603.1 L510.7,590.8 L541.1,572.3 L583.7,556.9 L626.2,541.5 L656.6,504.6 L681.0,449.2 L705.3,387.7 L729.6,326.2 L760.0,258.5 L760.0,258.5 L760.0,0 L0,0 Z" />
+<line class="grid" x1="60.8" y1="0" x2="60.8" y2="800"/>
+<text class="gridlbl" x="60.8" y="792" text-anchor="middle">80.5°E</text>
+<line class="grid" x1="212.8" y1="0" x2="212.8" y2="800"/>
+<line class="grid" x1="364.8" y1="0" x2="364.8" y2="800"/>
+<text class="gridlbl" x="364.8" y="792" text-anchor="middle">81.0°E</text>
+<line class="grid" x1="516.8" y1="0" x2="516.8" y2="800"/>
+<line class="grid" x1="668.8" y1="0" x2="668.8" y2="800"/>
+<text class="gridlbl" x="668.8" y="792" text-anchor="middle">81.5°E</text>
+<line class="grid" x1="0" y1="707.7" x2="760" y2="707.7"/>
+<text class="gridlbl" x="6" y="702.7">6.0°N</text>
+<line class="grid" x1="0" y1="553.8" x2="760" y2="553.8"/>
+<line class="grid" x1="0" y1="400.0" x2="760" y2="400.0"/>
+<text class="gridlbl" x="6" y="395.0">6.5°N</text>
+<line class="grid" x1="0" y1="246.2" x2="760" y2="246.2"/>
+<line class="grid" x1="0" y1="92.3" x2="760" y2="92.3"/>
+<text class="gridlbl" x="6" y="87.3">7.0°N</text>
+<polyline class="coast" points="0.0,727.4 36.5,741.5 79.0,739.1 115.5,755.7 152.0,741.5 176.3,729.2 206.7,721.2 243.2,692.9 279.7,679.4 322.2,656.6 358.7,646.8 395.2,640.0 437.8,631.4 480.3,603.1 510.7,590.8 541.1,572.3 583.7,556.9 626.2,541.5 656.6,504.6 681.0,449.2 705.3,387.7 729.6,326.2 760.0,258.5"/>
+<text class="sea" x="133.8" y="769.2" transform="rotate(-11 133.8 769.2)">ИНДИЙСКИЙ ОКЕАН</text>
+<polyline class="route" points="440.3,532.7 393.1,174.3 340.5,235.1 274.0,205.7 236.6,123.3 428.2,253.5 240.8,693.2 440.3,532.7"/>
+<g class="dot s1" data-n="1" tabindex="0" role="button" aria-label="Точка 1, Аэропорт Маттала. Показать в списке"><circle class="hit" cx="440.3" cy="532.7" r="23"/><circle class="ring" cx="440.3" cy="532.7" r="14.5"/><circle class="disc" cx="440.3" cy="532.7" r="13"/><text x="440.3" y="537.4" text-anchor="middle">1</text></g>
+<g class="dot s1" data-n="2" tabindex="0" role="button" aria-label="Точка 2, Скальный храм Дова. Показать в списке"><circle class="hit" cx="378.4" cy="180.7" r="23"/><circle class="ring" cx="378.4" cy="180.7" r="14.5"/><circle class="disc" cx="378.4" cy="180.7" r="13"/><text x="378.4" y="185.4" text-anchor="middle">2</text></g>
+<g class="dot s1" data-n="3" tabindex="0" role="button" aria-label="Точка 3, Богода: пещерный храм и деревянный мост. Показать в списке"><circle class="hit" cx="361.2" cy="89.1" r="23"/><circle class="ring" cx="361.2" cy="89.1" r="14.5"/><circle class="disc" cx="361.2" cy="89.1" r="13"/><text x="361.2" y="93.8" text-anchor="middle">3</text></g>
+<g class="dot s1" data-n="4" tabindex="0" role="button" aria-label="Точка 4, Нарангала. Показать в списке"><circle class="hit" cx="379.3" cy="65.3" r="23"/><circle class="ring" cx="379.3" cy="65.3" r="14.5"/><circle class="disc" cx="379.3" cy="65.3" r="13"/><text x="379.3" y="70.0" text-anchor="middle">4</text></g>
+<g class="dot s1" data-n="5" tabindex="0" role="button" aria-label="Точка 5, Будурувагала. Показать в списке"><circle class="hit" cx="412.4" cy="284.9" r="23"/><circle class="ring" cx="412.4" cy="284.9" r="14.5"/><circle class="disc" cx="412.4" cy="284.9" r="13"/><text x="412.4" y="289.6" text-anchor="middle">5</text></g>
+<g class="dot s1" data-n="6" tabindex="0" role="button" aria-label="Точка 6, Малигавила. Показать в списке"><circle class="hit" cx="567.5" cy="253.1" r="23"/><circle class="ring" cx="567.5" cy="253.1" r="14.5"/><circle class="disc" cx="567.5" cy="253.1" r="13"/><text x="567.5" y="257.8" text-anchor="middle">6</text></g>
+<g class="dot s1" data-n="7" tabindex="0" role="button" aria-label="Точка 7, Бодхисаттва Дамбегода. Показать в списке"><circle class="hit" cx="593.4" cy="267.3" r="23"/><circle class="ring" cx="593.4" cy="267.3" r="14.5"/><circle class="disc" cx="593.4" cy="267.3" r="13"/><text x="593.4" y="272.0" text-anchor="middle">7</text></g>
+<g class="dot s1" data-n="8" tabindex="0" role="button" aria-label="Точка 8, Говинда Хела. Показать в списке"><circle class="hit" cx="697.6" cy="71.2" r="23"/><circle class="ring" cx="697.6" cy="71.2" r="14.5"/><circle class="disc" cx="697.6" cy="71.2" r="13"/><text x="697.6" y="75.9" text-anchor="middle">8</text></g>
+<g class="dot s1" data-n="9" tabindex="0" role="button" aria-label="Точка 9, Нил-Дия-Покуна. Показать в списке"><circle class="hit" cx="404.9" cy="195.0" r="23"/><circle class="ring" cx="404.9" cy="195.0" r="14.5"/><circle class="disc" cx="404.9" cy="195.0" r="13"/><text x="404.9" y="199.7" text-anchor="middle">9</text></g>
+<g class="dot s1" data-n="10" tabindex="0" role="button" aria-label="Точка 10, Верхние ванны Дияллумы. Показать в списке"><circle class="hit" cx="384.0" cy="257.0" r="23"/><circle class="ring" cx="384.0" cy="257.0" r="14.5"/><circle class="disc" cx="384.0" cy="257.0" r="13"/><text x="384.0" y="261.7" text-anchor="middle">10</text></g>
+<g class="dot s2" data-n="11" tabindex="0" role="button" aria-label="Точка 11, Кресло Липтона. Показать в списке"><circle class="hit" cx="377.9" cy="227.7" r="23"/><circle class="ring" cx="377.9" cy="227.7" r="14.5"/><circle class="disc" cx="377.9" cy="227.7" r="13"/><text x="377.9" y="232.4" text-anchor="middle">11</text></g>
+<g class="dot s2" data-n="12" tabindex="0" role="button" aria-label="Точка 12, Фабрика Дамбатенне. Показать в списке"><circle class="hit" cx="348.9" cy="220.6" r="23"/><circle class="ring" cx="348.9" cy="220.6" r="14.5"/><circle class="disc" cx="348.9" cy="220.6" r="13"/><text x="348.9" y="225.3" text-anchor="middle">12</text></g>
+<g class="dot s2" data-n="13" tabindex="0" role="button" aria-label="Точка 13, Адишем. Показать в списке"><circle class="hit" cx="324.3" cy="237.4" r="23"/><circle class="ring" cx="324.3" cy="237.4" r="14.5"/><circle class="disc" cx="324.3" cy="237.4" r="13"/><text x="324.3" y="242.1" text-anchor="middle">13</text></g>
+<g class="dot s2" data-n="14" tabindex="0" role="button" aria-label="Точка 14, Станция Идалгашинна. Показать в списке"><circle class="hit" cx="296.8" cy="225.8" r="23"/><circle class="ring" cx="296.8" cy="225.8" r="14.5"/><circle class="disc" cx="296.8" cy="225.8" r="13"/><text x="296.8" y="230.5" text-anchor="middle">14</text></g>
+<g class="dot s2" data-n="15" tabindex="0" role="button" aria-label="Точка 15, Чёртова лестница. Показать в списке"><circle class="hit" cx="274.1" cy="205.3" r="23"/><circle class="ring" cx="274.1" cy="205.3" r="14.5"/><circle class="disc" cx="274.1" cy="205.3" r="13"/><text x="274.1" y="210.0" text-anchor="middle">15</text></g>
+<g class="dot s2" data-n="16" tabindex="0" role="button" aria-label="Точка 16, Бамбараканда. Показать в списке"><circle class="hit" cx="264.7" cy="233.8" r="23"/><circle class="ring" cx="264.7" cy="233.8" r="14.5"/><circle class="disc" cx="264.7" cy="233.8" r="13"/><text x="264.7" y="238.5" text-anchor="middle">16</text></g>
+<g class="dot s2" data-n="17" tabindex="0" role="button" aria-label="Точка 17, Хортон-Плейнс. Показать в списке"><circle class="hit" cx="239.7" cy="217.6" r="23"/><circle class="ring" cx="239.7" cy="217.6" r="14.5"/><circle class="disc" cx="239.7" cy="217.6" r="13"/><text x="239.7" y="222.3" text-anchor="middle">17</text></g>
+<g class="dot s3" data-n="18" tabindex="0" role="button" aria-label="Точка 18, Бомбуру Элла. Показать в списке"><circle class="hit" cx="266.1" cy="129.6" r="23"/><circle class="ring" cx="266.1" cy="129.6" r="14.5"/><circle class="disc" cx="266.1" cy="129.6" r="13"/><text x="266.1" y="134.3" text-anchor="middle">18</text></g>
+<g class="dot s3" data-n="19" tabindex="0" role="button" aria-label="Точка 19, Мун-Плейнс. Показать в списке"><circle class="hit" cx="247.3" cy="106.6" r="23"/><circle class="ring" cx="247.3" cy="106.6" r="14.5"/><circle class="disc" cx="247.3" cy="106.6" r="13"/><text x="247.3" y="111.3" text-anchor="middle">19</text></g>
+<g class="dot s3" data-n="20" tabindex="0" role="button" aria-label="Точка 20, Голуэйз-Лэнд. Показать в списке"><circle class="hit" cx="220.8" cy="120.2" r="23"/><circle class="ring" cx="220.8" cy="120.2" r="14.5"/><circle class="disc" cx="220.8" cy="120.2" r="13"/><text x="220.8" y="124.9" text-anchor="middle">20</text></g>
+<g class="dot s3" data-n="21" tabindex="0" role="button" aria-label="Точка 21, Намунукула. Показать в списке"><circle class="hit" cx="435.8" cy="133.4" r="23"/><circle class="ring" cx="435.8" cy="133.4" r="14.5"/><circle class="disc" cx="435.8" cy="133.4" r="13"/><text x="435.8" y="138.1" text-anchor="middle">21</text></g>
+<g class="dot s4" data-n="22" tabindex="0" role="button" aria-label="Точка 22, Каламетия, лодочное сафари. Показать в списке"><circle class="hit" cx="321.9" cy="656.9" r="23"/><circle class="ring" cx="321.9" cy="656.9" r="14.5"/><circle class="disc" cx="321.9" cy="656.9" r="13"/><text x="321.9" y="661.6" text-anchor="middle">22</text></g>
+<g class="dot s4" data-n="23" tabindex="0" role="button" aria-label="Точка 23, Уссангода. Показать в списке"><circle class="hit" cx="357.7" cy="646.8" r="23"/><circle class="ring" cx="357.7" cy="646.8" r="14.5"/><circle class="disc" cx="357.7" cy="646.8" r="13"/><text x="357.7" y="651.5" text-anchor="middle">23</text></g>
+<g class="dot s4" data-n="24" tabindex="0" role="button" aria-label="Точка 24, Ситулпавва. Показать в списке"><circle class="hit" cx="638.8" cy="469.2" r="23"/><circle class="ring" cx="638.8" cy="469.2" r="14.5"/><circle class="disc" cx="638.8" cy="469.2" r="13"/><text x="638.8" y="473.9" text-anchor="middle">24</text></g>
+<g class="dot s4" data-n="25" tabindex="0" role="button" aria-label="Точка 25, Катарагама. Показать в списке"><circle class="hit" cx="567.0" cy="450.4" r="23"/><circle class="ring" cx="567.0" cy="450.4" r="14.5"/><circle class="disc" cx="567.0" cy="450.4" r="13"/><text x="567.0" y="455.1" text-anchor="middle">25</text></g>
+<g class="dot s4" data-n="26" tabindex="0" role="button" aria-label="Точка 26, Мулкиригала. Показать в списке"><circle class="hit" cx="205.6" cy="632.3" r="23"/><circle class="ring" cx="205.6" cy="632.3" r="14.5"/><circle class="disc" cx="205.6" cy="632.3" r="13"/><text x="205.6" y="637.0" text-anchor="middle">26</text></g>
+<g class="dot s4" data-n="27" tabindex="0" role="button" aria-label="Точка 27, Хумманая. Показать в списке"><circle class="hit" cx="205.9" cy="721.5" r="23"/><circle class="ring" cx="205.9" cy="721.5" r="14.5"/><circle class="disc" cx="205.9" cy="721.5" r="13"/><text x="205.9" y="726.2" text-anchor="middle">27</text></g>
+<g class="dot s4" data-n="28" tabindex="0" role="button" aria-label="Точка 28, Рекава, наблюдение за черепахами. Показать в списке"><circle class="hit" cx="277.1" cy="679.2" r="23"/><circle class="ring" cx="277.1" cy="679.2" r="14.5"/><circle class="disc" cx="277.1" cy="679.2" r="13"/><text x="277.1" y="683.9" text-anchor="middle">28</text></g>
+<g class="dot s4" data-n="29" tabindex="0" role="button" aria-label="Точка 29, Хамбантота. Показать в списке"><circle class="hit" cx="436.8" cy="631.3" r="23"/><circle class="ring" cx="436.8" cy="631.3" r="14.5"/><circle class="disc" cx="436.8" cy="631.3" r="13"/><text x="436.8" y="636.0" text-anchor="middle">29</text></g>
+</svg></div>
+  <p class="maphint">Линейная проекция, 80.40–81.65°E / 5.85–7.15°N. Пунктир — линия маршрута.
+  Нажмите точку на схеме, чтобы перейти к её описанию; нажмите строку в списке, чтобы
+  подсветить точку. Соседние точки, которые иначе слиплись бы, слегка разведены —
+  точные координаты каждой указаны в её строке. На узком экране схема прокручивается вбок.</p>
+</section>
+
+<section class="blk" id="route">
+  <p class="label">03 — Маршрут</p>
+  <h2>Четыре базы, 29 точек</h2>
+  <section class="stage s1" id="s-1"><header class="stage-h"><p class="stage-meta"><span class="stage-date">23–26.02</span><span class="stage-count">10 точек</span></p><h3>Элла, 3 ночи</h3><p class="base">Прилёт в Маттала и сразу наверх: 2,5–3 часа через Веллаваю. Побережье оставляем на конец.</p></header><p class="dayband">23.02 — прилёт</p><article class="pt" id="p-1" data-n="1"><div class="pt-id"><span class="num">01</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Mattala Rajapaksa International Airport (HRI)</h4><p class="ru">Аэропорт Маттала </p><p class="d">Сюда летает Belavia из Минска. Сразу в путь на север: Хамбантота → Веллавая → Элла.</p><p class="geo">6°17.06′ N · 81°07.45′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.2844,81.1242" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.2844, 81.1242">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AMattala_Rajapaksa_International_Airport_control_tower.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Mattala_Rajapaksa_International_Airport_control_tower.jpg/1280px-Mattala_Rajapaksa_International_Airport_control_tower.jpg" alt="Аэропорт Маттала" loading="lazy" decoding="async" width="1280" height="960"><figcaption>Anuradha Dullewe Wijeyeratne · Public domain · <a href="https://commons.wikimedia.org/wiki/File%3AMattala_Rajapaksa_International_Airport_control_tower.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><p class="dayband">24.02 — пещеры и дерево</p><article class="pt" id="p-2" data-n="2"><div class="pt-id"><span class="num">02</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Dowa Ancient Rock Temple</h4><p class="ru">Скальный храм Дова </p><p class="d">Незаконченный Будда высотой около 11 метров, вырезанный прямо в скальной стене у дороги Бандаравела — Бадулла. Внутри пещера с росписями. Проезжают мимо почти все.</p><p class="geo">6°51.38′ N · 81°01.34′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.8563,81.0223" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.8563, 81.0223">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ASL_Ella_asv2020-01_img29_Dhowa_Temple.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/SL_Ella_asv2020-01_img29_Dhowa_Temple.jpg/1280px-SL_Ella_asv2020-01_img29_Dhowa_Temple.jpg" alt="Скальный храм Дова" loading="lazy" decoding="async" width="1280" height="853"><figcaption>A.Savin · FAL · <a href="https://commons.wikimedia.org/wiki/File%3ASL_Ella_asv2020-01_img29_Dhowa_Temple.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-3" data-n="3"><div class="pt-id"><span class="num">03</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Bogoda Raja Maha Viharaya &amp; Wooden Bridge</h4><p class="ru">Богода: пещерный храм и деревянный мост <span class="tag">то, что искали</span></p><p class="d">Пещерный храм I века до н. э.: капельные карнизы с надписями брахми, лежачий Будда, росписи и заваленный тоннель, где теперь живут летучие мыши. Рядом — крытый мост XVI века через Галланда-Оя, собранный целиком из дерева, даже гвозди деревянные. Единственный сохранившийся мост такого типа в стране. Ехать через Хали-Элу, вход бесплатный, обувь снимают.</p><p class="geo">7°00.48′ N · 80°59.78′ E</p><p class="acts"><a href="https://www.google.com/maps?q=7.0080,80.9963" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="7.0080, 80.9963">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ABogoda_Wooden_Bridge.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Bogoda_Wooden_Bridge.jpg/1280px-Bogoda_Wooden_Bridge.jpg" alt="Богода: пещерный храм и деревянный мост" loading="lazy" decoding="async" width="1280" height="853"><figcaption>Morin Nishanthini · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3ABogoda_Wooden_Bridge.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-4" data-n="4"><div class="pt-id"><span class="num">04</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Narangala Mountain</h4><p class="ru">Нарангала </p><p class="d">Опция к Богоде: голая вершина 1527 м, подъём около 1,5 часов по сыпучей тропе без ступеней. Плоское плато наверху, почти нет людей.</p><p class="geo">7°02.46′ N · 81°01.30′ E</p><p class="acts"><a href="https://www.google.com/maps?q=7.0410,81.0217" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="7.0410, 81.0217">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AHikers_in_Narangala_Sri_Lanka.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Hikers_in_Narangala_Sri_Lanka.jpg/1280px-Hikers_in_Narangala_Sri_Lanka.jpg" alt="Нарангала" loading="lazy" decoding="async" width="1280" height="853"><figcaption>Ahamed rasheed · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3AHikers_in_Narangala_Sri_Lanka.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><p class="dayband">25.02 — день скальных гигантов</p><article class="pt" id="p-5" data-n="5"><div class="pt-id"><span class="num">05</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Buduruwagala Rock Carvings</h4><p class="ru">Будурувагала </p><p class="d">Семь фигур, высеченных в скале около X века. Центральный Будда примерно 15 метров — самый высокий древний стоящий Будда острова, на камне ещё видны следы краски. Стоит в лесу у озера, туристов мало. В деревне живут потомственные гиды.</p><p class="geo">6°41.23′ N · 81°04.70′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.6871,81.0783" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.6871, 81.0783">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ABuduruwagala-site.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Buduruwagala-site.jpg/1280px-Buduruwagala-site.jpg" alt="Будурувагала" loading="lazy" decoding="async" width="1280" height="902"><figcaption>Pasan · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3ABuduruwagala-site.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-6" data-n="6"><div class="pt-id"><span class="num">06</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Maligawila Buddha Statue</h4><p class="ru">Малигавила </p><p class="d">Статуя VII века из цельного куска известняка, 11,5 метра — самая высокая свободно стоящая древняя статуя Будды на острове. Идти к ней через тенистую лесную тропу.</p><p class="geo">6°43.70′ N · 81°21.14′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.7284,81.3524" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.7284, 81.3524">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AStanding_Buddha_Statue_Maligawila.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Standing_Buddha_Statue_Maligawila.jpg" alt="Малигавила" loading="lazy" decoding="async" width="712" height="1024"><figcaption>S.G.Seyone · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File%3AStanding_Buddha_Statue_Maligawila.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-7" data-n="7"><div class="pt-id"><span class="num">07</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Dambegoda Bodhisattva Statue</h4><p class="ru">Бодхисаттва Дамбегода </p><p class="d">Вторая статуя того же комплекса, в сотне метров. Была разбита и собрана заново.</p><p class="geo">6°43.55′ N · 81°21.42′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.7259,81.3570" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.7259, 81.3570">Координаты</button><a href="https://www.google.com/search?tbm=isch&amp;q=Dambegoda+Bodhisattva+Statue" target="_blank" rel="noopener">Фото</a></p></div><p class="nophoto">Фото на Wikimedia Commons не нашлось — <a href="https://www.google.com/search?tbm=isch&amp;q=Dambegoda+Bodhisattva+Statue" target="_blank" rel="noopener">искать в Google Картинках</a></p></div></article><article class="pt" id="p-8" data-n="8"><div class="pt-id"><span class="num">08</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Govinda Hela (Westminster Abbey)</h4><p class="ru">Говинда Хела <span class="tag">джунгли, на весь день</span></p><p class="d">Альтернатива на весь день 25.02, если хочется дикого. Монолит около 550 м посреди джунглей, крепость субкороля Бхуванекабаху XIII века; британцы прозвали его Вестминстерским аббатством. Тропа начинается за храмом Шри Буванекабаху, билет берут у настоятеля. Подъём около 2 часов, спуск час, местами металлические лестницы и мостики, часть ржавая. От Эллы примерно 3 часа в одну сторону — день получится очень длинным.</p><p class="geo">7°02.06′ N · 81°32.84′ E</p><p class="acts"><a href="https://www.google.com/maps?q=7.0343,81.5474" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="7.0343, 81.5474">Координаты</button><a href="https://www.google.com/search?tbm=isch&amp;q=Govinda+Hela+(Westminster+Abbey)" target="_blank" rel="noopener">Фото</a></p></div><p class="nophoto">Фото на Wikimedia Commons не нашлось — <a href="https://www.google.com/search?tbm=isch&amp;q=Govinda+Hela+(Westminster+Abbey)" target="_blank" rel="noopener">искать в Google Картинках</a></p></div></article><p class="dayband">26.02 — переезд в Хапутале</p><article class="pt" id="p-9" data-n="9"><div class="pt-id"><span class="num">09</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Nil Diya Pokuna (Karandagolla Cave)</h4><p class="ru">Нил-Дия-Покуна <span class="tag">25 мин от Эллы</span></p><p class="d">Подземное озеро в 80 метрах внутри горы. Спуск начинается с узкой дыры в земле, дальше верёвки, лестницы и тёмные ходы; гид обязателен, выдают налобник, большие фонари запрещены из-за летучих мышей. Будет грязно — возьмите сменную одежду. Пещеру закрывали в конце 2024 года, потом доступ вернули с обучением гидов: уточните, что она работает.</p><p class="geo">6°49.99′ N · 81°03.95′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.8331,81.0659" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.8331, 81.0659">Координаты</button><a href="https://www.google.com/search?tbm=isch&amp;q=Nil+Diya+Pokuna+(Karandagolla+Cave)" target="_blank" rel="noopener">Фото</a></p></div><p class="nophoto">Фото на Wikimedia Commons не нашлось — <a href="https://www.google.com/search?tbm=isch&amp;q=Nil+Diya+Pokuna+(Karandagolla+Cave)" target="_blank" rel="noopener">искать в Google Картинках</a></p></div></article><article class="pt" id="p-10" data-n="10"><div class="pt-id"><span class="num">10</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Diyaluma Falls Upper Pools</h4><p class="ru">Верхние ванны Дияллумы </p><p class="d">Второй по высоте водопад страны. Смысл не в нижней смотровой у дороги, а наверху: каскад природных ванн над обрывом. Подъём 30–45 минут, можно подъехать ближе к точке старта. Дальше — прямая дорога на Хапутале.</p><p class="geo">6°43.99′ N · 81°01.88′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.7331,81.0314" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.7331, 81.0314">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AUpper_Diyaluma.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Upper_Diyaluma.jpg/1280px-Upper_Diyaluma.jpg" alt="Верхние ванны Дияллумы" loading="lazy" decoding="async" width="1280" height="960"><figcaption>Sampathbandaraliyanage · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3AUpper_Diyaluma.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><div class="stays"><h5>Где ночевать</h5><ul><li><a class="stay-n" href="https://www.google.com/maps?q=6.8698,81.0432" target="_blank" rel="noopener">Paraiso Guest House</a><span class="stay-a">Kitalella, Ella</span><span class="stay-d">10 минут пешком до центра вдоль железной дороги, свой двор и парковка</span></li><li><a class="stay-n" href="https://www.google.com/maps?q=6.8711,81.0459" target="_blank" rel="noopener">Ella Mount View Guest Inn</a><span class="stay-a">Waterfall Rd, Ella</span><span class="stay-d">выше по склону, подъём в гору пешком, зато балконы на долину</span></li><li><a class="stay-n" href="https://www.google.com/maps?q=6.8707,81.0478" target="_blank" rel="noopener">Country Homes Ella</a><span class="stay-a">Wellawaya Rd, Ella</span><span class="stay-d">5 минут до центра, при этом не в самом шумном месте</span></li></ul></div></section>
+<section class="stage s2" id="s-2"><header class="stage-h"><p class="stage-meta"><span class="stage-date">26.02–01.03</span><span class="stage-count">7 точек</span></p><h3>Хапутале, 3 ночи</h3><p class="base">Чайная страна пешком. Хапутале заметно тише Эллы.</p></header><p class="dayband">27.02 — рассвет и спуск</p><article class="pt" id="p-11" data-n="11"><div class="pt-id"><span class="num">11</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Lipton&#x27;s Seat</h4><p class="ru">Кресло Липтона <span class="tag">с 5:30</span></p><p class="d">Открыто с 5:30. Подняться к рассвету на джипе, а вниз идти пешком через плантации — весь смысл в спуске, а не в поездке в обе стороны.</p><p class="geo">6°46.84′ N · 81°00.93′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.7807,81.0155" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.7807, 81.0155">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ALipton-seat_Sri_Lanka.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Lipton-seat_Sri_Lanka.jpg/1280px-Lipton-seat_Sri_Lanka.jpg" alt="Кресло Липтона" loading="lazy" decoding="async" width="1280" height="853"><figcaption>AriyaHetti · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3ALipton-seat_Sri_Lanka.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-12" data-n="12"><div class="pt-id"><span class="num">12</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Dambatenne Tea Factory</h4><p class="ru">Фабрика Дамбатенне </p><p class="d">Финиш спуска от Кресла Липтона, около 7 км. Фабрика конца XIX века, работает до сих пор.</p><p class="geo">6°47.14′ N · 80°58.42′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.7856,80.9736" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.7856, 80.9736">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ATea_factory_Haputale.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Tea_factory_Haputale.jpg/1280px-Tea_factory_Haputale.jpg" alt="Фабрика Дамбатенне" loading="lazy" decoding="async" width="1280" height="719"><figcaption>Vishva Nirmani · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3ATea_factory_Haputale.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-13" data-n="13"><div class="pt-id"><span class="num">13</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Adisham Bungalow (St. Benedict&#x27;s Monastery)</h4><p class="ru">Адишем <span class="tag">9:00–16:30</span></p><p class="d">Бенедиктинский монастырь в тюдоровском особняке 1931 года внутри птичьего заказника Тангамале. Комнаты с обстановкой тридцатых, сад, монастырская лавка с домашним вареньем.</p><p class="geo">6°46.34′ N · 80°55.87′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.7723,80.9311" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.7723, 80.9311">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AAdisham_Bungalow.JPG" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Adisham_Bungalow.JPG/1280px-Adisham_Bungalow.JPG" alt="Адишем" loading="lazy" decoding="async" width="1280" height="853"><figcaption>AntanO · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3AAdisham_Bungalow.JPG" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-14" data-n="14"><div class="pt-id"><span class="num">14</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Idalgashinna Railway Station</h4><p class="ru">Станция Идалгашинна </p><p class="d">1615 м, 8 км от Хапутале. В ясную погоду видно пять провинций сразу: с одной стороны южные низины, с другой — центральный хребет. Рядом смотровая, подъём около 30–45 минут. Заехать во второй половине дня 27-го.</p><p class="geo">6°46.76′ N · 80°53.81′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.7794,80.8969" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.7794, 80.8969">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AIdalgashinna_railway_station_2017.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Idalgashinna_railway_station_2017.jpg/1280px-Idalgashinna_railway_station_2017.jpg" alt="Станция Идалгашинна" loading="lazy" decoding="async" width="1280" height="731"><figcaption>Samantha Weerasinghe · CC BY 2.0 · <a href="https://commons.wikimedia.org/wiki/File%3AIdalgashinna_railway_station_2017.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><p class="dayband">28.02 — целый день пешком</p><article class="pt" id="p-15" data-n="15"><div class="pt-id"><span class="num">15</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Devil&#x27;s Staircase (Ohiya → Kalupahana)</h4><p class="ru">Чёртова лестница <span class="tag">нужен гид</span></p><p class="d">14–16 км вниз по колониальной дороге через чайные поместья и узкие хребты, перепад больше километра. Тропа местами теряется, берите гида. Часть совпадает с 11-м этапом Pekoe Trail.</p><p class="geo">6°48.95′ N · 80°51.04′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.8158,80.8506" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.8158, 80.8506">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ADevils_staircase_road6.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Devils_staircase_road6.jpg/1280px-Devils_staircase_road6.jpg" alt="Чёртова лестница" loading="lazy" decoding="async" width="1280" height="960"><figcaption>Chathushka96 · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3ADevils_staircase_road6.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-16" data-n="16"><div class="pt-id"><span class="num">16</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Bambarakanda Falls</h4><p class="ru">Бамбараканда </p><p class="d">Финиш спуска: самый высокий водопад страны, 263 метра, подход через сосновую рощу. Открыто 6:00–18:00, вход платный. Дальше 5 км до трассы в Калупахане.</p><p class="geo">6°46.40′ N · 80°49.87′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.7734,80.8312" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.7734, 80.8312">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ABambarakanda_Waterfall.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Bambarakanda_Waterfall.jpg/1280px-Bambarakanda_Waterfall.jpg" alt="Бамбараканда" loading="lazy" decoding="async" width="1280" height="722"><figcaption>Kiriwattuduwa · CC BY-SA 3.0 · <a href="https://commons.wikimedia.org/wiki/File%3ABambarakanda_Waterfall.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><p class="dayband">01.03 — переезд в Нувара-Элию</p><article class="pt" id="p-17" data-n="17"><div class="pt-id"><span class="num">17</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Horton Plains / World&#x27;s End</h4><p class="ru">Хортон-Плейнс <span class="tag">выезд в 5:00</span></p><p class="d">Выезжать в 5:00, чтобы быть на обрыве к семи: позже затягивает облаками и смотреть не на что. Оттуда прямая дорога вниз на Нувара-Элию.</p><p class="geo">6°47.62′ N · 80°47.92′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.7936,80.7986" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.7936, 80.7986">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ASri_Lanka%2C_World%27s_End_at_Horton_Plains.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Sri_Lanka%2C_World%27s_End_at_Horton_Plains.jpg/1280px-Sri_Lanka%2C_World%27s_End_at_Horton_Plains.jpg" alt="Хортон-Плейнс" loading="lazy" decoding="async" width="1280" height="1920"><figcaption>Vyacheslav Argenberg · CC BY 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3ASri_Lanka%2C_World%27s_End_at_Horton_Plains.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><div class="stays"><h5>Где ночевать</h5><ul><li><a class="stay-n" href="https://www.google.com/maps?q=6.7698,80.9365" target="_blank" rel="noopener">Nilowin Glenanore Guesthouse</a><span class="stay-a">Adisham Rd, Haputale</span><span class="stay-d">на дороге к Адишему, на выходе из города; хозяева проводят кулинарный класс</span></li><li><a class="stay-n" href="https://www.google.com/maps?q=6.7698,80.9365" target="_blank" rel="noopener">Mountain Paradise Bliss Guest House</a><span class="stay-a">Adisham Rd, Haputale</span><span class="stay-d">там же, в стороне от шумной главной улицы</span></li><li><a class="stay-n" href="https://www.google.com/maps?q=6.7757,80.8526" target="_blank" rel="noopener">The Capoe House</a><span class="stay-a">Kalupahana — Ohiya Rd</span><span class="stay-d">ближе всего к Бамбараканде и Чёртовой лестнице; наверх поднимают на джипе хозяев</span></li><li><a class="stay-n" href="https://www.google.com/maps?q=6.8318,80.9891" target="_blank" rel="noopener">Bandarawela Hotel</a><span class="stay-a">Welimada Rd, Bandarawela</span><span class="stay-d">дороже остальных: колониальный отель конца XIX века, если захочется одну ночь другого формата</span></li></ul></div></section>
+<section class="stage s3" id="s-3"><header class="stage-h"><p class="stage-meta"><span class="stage-date">01–04.03</span><span class="stage-count">4 точек</span></p><h3>Нувара-Элия, 3 ночи</h3><p class="base">Верхняя точка маршрута. Ночью холодно, отопления в гестхаусах обычно нет.</p></header><p class="dayband">02.03</p><article class="pt" id="p-18" data-n="18"><div class="pt-id"><span class="num">18</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Bomburu Ella Waterfall</h4><p class="ru">Бомбуру Элла </p><p class="d">Широкий многоструйный каскад в Уда-Пуссаллаве. От парковки 2–3 км вверх по каменистой тропе, час-полтора. Важно: не останавливаться на первой смотровой, главный вид дальше.</p><p class="geo">6°56.83′ N · 80°49.87′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.9472,80.8311" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.9472, 80.8311">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ABomburu_ella_falls.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Bomburu_ella_falls.jpg/1280px-Bomburu_ella_falls.jpg" alt="Бомбуру Элла" loading="lazy" decoding="async" width="1280" height="960"><figcaption>Buddhika Mawella · CC BY 3.0 · <a href="https://commons.wikimedia.org/wiki/File%3ABomburu_ella_falls.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><p class="dayband">03.03</p><article class="pt" id="p-19" data-n="19"><div class="pt-id"><span class="num">19</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Moon Plains</h4><p class="ru">Мун-Плейнс </p><p class="d">Плато с круговым обзором: в ясный день видно Пидуруталагалу и хребет Кнаклс. Подвозят на джипах.</p><p class="geo">6°57.80′ N · 80°48.13′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.9633,80.8022" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.9633, 80.8022">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ANuwara_Eliya_Moon_Plains.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Nuwara_Eliya_Moon_Plains.jpg/1280px-Nuwara_Eliya_Moon_Plains.jpg" alt="Мун-Плейнс" loading="lazy" decoding="async" width="1280" height="960"><figcaption>Maadhil · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3ANuwara_Eliya_Moon_Plains.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-20" data-n="20"><div class="pt-id"><span class="num">20</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Galway&#x27;s Land National Park</h4><p class="ru">Голуэйз-Лэнд </p><p class="d">Клочок горного леса в черте города, эндемичные птицы, час неспешной прогулки. Хорошо сочетается с чайными посёлками выше города.</p><p class="geo">6°57.62′ N · 80°46.45′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.9603,80.7742" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.9603, 80.7742">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AGalway%27s_Land_National_Park.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Galway%27s_Land_National_Park.jpg/1280px-Galway%27s_Land_National_Park.jpg" alt="Голуэйз-Лэнд" loading="lazy" decoding="async" width="1280" height="853"><figcaption>Juliz93 · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3AGalway%27s_Land_National_Park.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-21" data-n="21"><div class="pt-id"><span class="num">21</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Namunukula</h4><p class="ru">Намунукула </p><p class="d">Опция, если останутся силы: хребет из девяти вершин, высшая точка провинции Ува, 2035 м. Нужны носки от пиявок.</p><p class="geo">6°56.00′ N · 81°07.00′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.9333,81.1167" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.9333, 81.1167">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ANamunukula.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Namunukula.jpg/1280px-Namunukula.jpg" alt="Намунукула" loading="lazy" decoding="async" width="1280" height="950"><figcaption>Source/Author: Chamara Ratnaweera · Public domain · <a href="https://commons.wikimedia.org/wiki/File%3ANamunukula.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><div class="stays"><h5>Где ночевать</h5><ul><li><a class="stay-n" href="https://www.google.com/maps?q=6.9705,80.7847" target="_blank" rel="noopener">Ruchi House</a><span class="stay-a">Lady McCallum Drive, Nuwara Eliya</span><span class="stay-d">дом в британском стиле, тёплые одеяла и трансфер до станции Нану-Оя</span></li><li><a class="stay-n" href="https://www.google.com/maps?q=6.9709,80.7852" target="_blank" rel="noopener">Frosty Heaven Guest House</a><span class="stay-a">Lady McCallum Drive, Nuwara Eliya</span><span class="stay-d">на той же улице, небольшой семейный дом с садом</span></li></ul></div></section>
+<section class="stage s4" id="s-4"><header class="stage-h"><p class="stage-meta"><span class="stage-date">04–09.03</span><span class="stage-count">8 точек</span></p><h3>Тангалле, 5 ночей</h3><p class="base">Спуск к океану 5–6 часов. База на все оставшиеся дни, переездов больше нет.</p></header><p class="dayband">05.03 — рассвет</p><article class="pt" id="p-22" data-n="22"><div class="pt-id"><span class="num">22</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Kalametiya Bird Sanctuary — lagoon boat safari</h4><p class="ru">Каламетия, лодочное сафари <span class="tag">мангры</span></p><p class="d">Сафари по мангровым протокам: узкая лодка на шесте, зимородки, щурки, цапли, буйволы вдоль берега, короткая высадка в заросли. Выходы с 5:30–6:00, есть и закатные с ужином на борту. Работают несколько семейных операторов рядом друг с другом — Kalametiya Bird Sanctuary Ecotourism, Kalametiya Eco Birdwatching, Wildlife Wonders. Бронировать накануне.</p><p class="geo">6°04.95′ N · 80°55.76′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.0825,80.9294" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.0825, 80.9294">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AKalametiya_Bird_Sanctuary_Reflections.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Kalametiya_Bird_Sanctuary_Reflections.jpg/1280px-Kalametiya_Bird_Sanctuary_Reflections.jpg" alt="Каламетия, лодочное сафари" loading="lazy" decoding="async" width="1280" height="853"><figcaption>Peter Addor · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3AKalametiya_Bird_Sanctuary_Reflections.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-23" data-n="23"><div class="pt-id"><span class="num">23</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Ussangoda National Park</h4><p class="ru">Уссангода </p><p class="d">Плато красной земли на обрыве к океану, почти без растительности — из-за высокого содержания железа и никеля в почве. Легенда связывает его с Раваной. Вход свободный, купаться нельзя: течения и камни.</p><p class="geo">6°05.93′ N · 80°59.30′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.0989,80.9883" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.0989, 80.9883">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ARed_soil_found_in_Ussangoda_National_Park.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Red_soil_found_in_Ussangoda_National_Park.jpg/1280px-Red_soil_found_in_Ussangoda_National_Park.jpg" alt="Уссангода" loading="lazy" decoding="async" width="1280" height="960"><figcaption>Dinil Samarasinha · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3ARed_soil_found_in_Ussangoda_National_Park.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><p class="dayband">06.03 — Шиваратри</p><article class="pt" id="p-24" data-n="24"><div class="pt-id"><span class="num">24</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Sithulpawwa Raja Maha Viharaya</h4><p class="ru">Ситулпавва </p><p class="d">Скальный монастырь II века до н. э. в глубине джунглей Ялы, на голой скале с обзором на весь лес. Основан царём Кавантиссой. Ведёт отдельная дорога со стороны Катарагамы — уточните въезд и билеты.</p><p class="geo">6°23.25′ N · 81°27.04′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.3875,81.4506" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.3875, 81.4506">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ASithulpawwa_temple_on_the_rock_view.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Sithulpawwa_temple_on_the_rock_view.jpg/1280px-Sithulpawwa_temple_on_the_rock_view.jpg" alt="Ситулпавва" loading="lazy" decoding="async" width="1280" height="960"><figcaption>Gethmaperera · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3ASithulpawwa_temple_on_the_rock_view.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-25" data-n="25"><div class="pt-id"><span class="num">25</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Kataragama</h4><p class="ru">Катарагама </p><p class="d">1,5 часа от Тангалле. 6 марта — Маха Шиваратри: пост и ночное бдение у индуистов. Здесь важна не архитектура, а живой ритуал — вечерняя пуджа около 18:30, в одном дворе буддисты, индуисты, мусульмане и ведды. Одежда закрытая, лучше белая.</p><p class="geo">6°25.09′ N · 81°19.95′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.4181,81.3325" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.4181, 81.3325">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AKataragama_Maha_Devale.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Kataragama_Maha_Devale.jpg/1280px-Kataragama_Maha_Devale.jpg" alt="Катарагама" loading="lazy" decoding="async" width="1280" height="960"><figcaption>Ghostface Buddha · CC BY-SA 2.0 · <a href="https://commons.wikimedia.org/wiki/File%3AKataragama_Maha_Devale.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><p class="dayband">07.03</p><article class="pt" id="p-26" data-n="26"><div class="pt-id"><span class="num">26</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Mulgirigala Raja Maha Viharaya</h4><p class="ru">Мулкиригала <span class="tag">Маленькая Сигирия</span></p><p class="d">Местные зовут её Punchi Sigiriya — Маленькая Сигирия. Скала за 200 метров, пять ярусов террас, пещеры с росписями на сводах и лежачими Буддами, древние ступени, вырубленные в камне. Около 350 ступеней, наверху обзор на весь лес. Вход 500 рупий.</p><p class="geo">6°07.35′ N · 80°44.29′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.1225,80.7382" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.1225, 80.7382">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AMulkirigala_Rock_Temple_-_B.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/Mulkirigala_Rock_Temple_-_B.jpg/1280px-Mulkirigala_Rock_Temple_-_B.jpg" alt="Мулкиригала" loading="lazy" decoding="async" width="1280" height="853"><figcaption>Dan arndt · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3AMulkirigala_Rock_Temple_-_B.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-27" data-n="27"><div class="pt-id"><span class="num">27</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Hummanaya Blow Hole</h4><p class="ru">Хумманая </p><p class="d">Единственный природный блоухол Шри-Ланки: волна бьёт фонтаном через щель в скале. Работает 8:00–19:00, лучше в прилив. Подход скользкий, к краю не подходить.</p><p class="geo">5°58.66′ N · 80°44.32′ E</p><p class="acts"><a href="https://www.google.com/maps?q=5.9776,80.7387" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="5.9776, 80.7387">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AHummanaya%28Blow_hole%29%2C_Kudawella%2C_Sri_Lanka.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Hummanaya%28Blow_hole%29%2C_Kudawella%2C_Sri_Lanka.jpg/1280px-Hummanaya%28Blow_hole%29%2C_Kudawella%2C_Sri_Lanka.jpg" alt="Хумманая" loading="lazy" decoding="async" width="1280" height="1707"><figcaption>Moonpuddles · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3AHummanaya%28Blow_hole%29%2C_Kudawella%2C_Sri_Lanka.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><article class="pt" id="p-28" data-n="28"><div class="pt-id"><span class="num">28</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Turtle Watch Rekawa</h4><p class="ru">Рекава, наблюдение за черепахами </p><p class="d">Приём 19:30–23:00, билет на месте. На этот пляж выходят гнездиться пять видов черепах; проект ведут местные, бывшие сборщики яиц. Честно: в эти даты луна тёмная, шанс увидеть кладку ниже обычного, и ждать можно два-три часа.</p><p class="geo">6°02.78′ N · 80°51.34′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.0463,80.8557" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.0463, 80.8557">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3ARekawa_Logoon_-_panoramio_-_Banja-Frans_Mulder.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Rekawa_Logoon_-_panoramio_-_Banja-Frans_Mulder.jpg" alt="Рекава, наблюдение за черепахами" loading="lazy" decoding="async" width="900" height="600"><figcaption>Banja-Frans Mulder · CC BY 3.0 · <a href="https://commons.wikimedia.org/wiki/File%3ARekawa_Logoon_-_panoramio_-_Banja-Frans_Mulder.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><p class="dayband">08–09.03</p><article class="pt" id="p-29" data-n="29"><div class="pt-id"><span class="num">29</span></div><div class="pt-main"><div class="pt-text"><h4 class="en">Hambantota</h4><p class="ru">Хамбантота </p><p class="d">По дороге в аэропорт. Рыбный рынок и вечерний ифтар-базар в последние дни Рамадана.</p><p class="geo">6°07.45′ N · 81°07.11′ E</p><p class="acts"><a href="https://www.google.com/maps?q=6.1241,81.1185" target="_blank" rel="noopener">Карта</a><button type="button" class="copy" data-c="6.1241, 81.1185">Координаты</button><a href="https://commons.wikimedia.org/wiki/File%3AFishery_Harbor_Hambantota.jpg" target="_blank" rel="noopener">Фото</a></p></div><figure class="shot"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Fishery_Harbor_Hambantota.jpg/1280px-Fishery_Harbor_Hambantota.jpg" alt="Хамбантота" loading="lazy" decoding="async" width="1280" height="960"><figcaption>Dilshanhettihewa · CC BY-SA 4.0 · <a href="https://commons.wikimedia.org/wiki/File%3AFishery_Harbor_Hambantota.jpg" target="_blank" rel="noopener">Wikimedia Commons</a></figcaption></figure></div></article><div class="stays"><h5>Где ночевать</h5><ul><li><a class="stay-n" href="https://www.google.com/maps?q=6.0366,80.8048" target="_blank" rel="noopener">Mallika Guest House</a><span class="stay-a">Madilla Rd, Medaketiya, Tangalle</span><span class="stay-d">через дорогу от пляжа, своя кухня и бар на песке</span></li><li><a class="stay-n" href="https://www.google.com/maps?q=6.0332,80.8003" target="_blank" rel="noopener">Rukmila Guest House</a><span class="stay-a">Deepankara Rd, Medaketiya</span><span class="stay-d">новый дом в минуте от пляжа, тихая улица</span></li><li><a class="stay-n" href="https://www.google.com/maps?q=6.0331,80.7988" target="_blank" rel="noopener">Long Beach HomeStay</a><span class="stay-a">Medaketiya Patumaga, Tangalle</span><span class="stay-d">есть общая кухня и стиральная машина — удобно на пять ночей</span></li><li><a class="stay-n" href="https://www.google.com/maps?q=6.0263,80.7966" target="_blank" rel="noopener">Neo Point Guest House</a><span class="stay-a">Sea Avenues, Tangalle</span><span class="stay-d">ближе к городу и магазинам, чем к пляжу Медакетия</span></li></ul></div></section>
+</section>
+
+<section class="blk" id="check">
+  <p class="label">04 — Перед выездом</p>
+  <h2>Что проверить самостоятельно</h2>
+  <ol class="check"><li>Расписание Belavia по дням недели — от этого зависят первый и последний день.</li><li>Визовые правила Шри-Ланки (ETA) — менялись несколько раз за последние годы.</li><li>Нил-Дия-Покуна: пещеру закрывали в конце 2024 года, доступ вернули с регламентом для гидов. Убедитесь, что она открыта.</li><li>Гид на Devil&#x27;s Staircase: тропа размечена плохо, развилки путают.</li><li>Говинда Хела: билет берут у настоятеля храма в основании скалы; часть металлических лестниц и мостиков ржавые.</li><li>Шиваратри 6 марта — программу в местных ковилах заранее не публикуют, спрашивайте на месте за день-два.</li></ol>
+</section>
+
+<section class="blk" id="sources">
+  <p class="label">05 — Источники</p>
+  <h2>Откуда данные</h2>
+  <ul class="src"><li><a href="https://en.wikipedia.org/wiki/2027_in_Sri_Lanka" target="_blank" rel="noopener"><span class="st">Праздники Шри-Ланки 2027</span><span class="sh">en.wikipedia.org</span></a></li><li><a href="https://publicholidays.lk/mahasivarathri-day/" target="_blank" rel="noopener"><span class="st">Маха Шиваратри 2027</span><span class="sh">publicholidays.lk</span></a></li><li><a href="https://publicholidays.lk/poya-day/" target="_blank" rel="noopener"><span class="st">Дни пойи</span><span class="sh">publicholidays.lk</span></a></li><li><a href="https://www.flightsfrom.com/HRI" target="_blank" rel="noopener"><span class="st">Рейсы из Маттала (HRI)</span><span class="sh">flightsfrom.com</span></a></li><li><a href="https://amazinglanka.com/wp/bogoda/" target="_blank" rel="noopener"><span class="st">Богода: мост и пещерный храм</span><span class="sh">amazinglanka.com</span></a></li><li><a href="https://www.sundaytimes.lk/260823/news/nil-diya-pokuna-row-rules-laid-down-for-guides-after-defiance-safe-access-facilitated-653068.html" target="_blank" rel="noopener"><span class="st">Нил-Дия-Покуна, новые правила доступа</span><span class="sh">sundaytimes.lk</span></a></li><li><a href="https://amazinglanka.com/wp/govinda-hela-westminster-abbey/" target="_blank" rel="noopener"><span class="st">Говинда Хела</span><span class="sh">amazinglanka.com</span></a></li><li><a href="https://www.lakpura.com/pages/devil-s-staircase" target="_blank" rel="noopener"><span class="st">Devil&#x27;s Staircase и Бамбараканда</span><span class="sh">lakpura.com</span></a></li><li><a href="https://www.turtlewatchrekawa.org/" target="_blank" rel="noopener"><span class="st">Turtle Watch Rekawa</span><span class="sh">turtlewatchrekawa.org</span></a></li></ul>
+</section>
+
+</main>
+
+<footer>
+  Координаты точек — из Google Places. Фотографии — Wikimedia Commons, автор и лицензия
+  указаны под каждым снимком. Личная страница, не коммерческий продукт.
+</footer>
+</div>
+
+<script>
+(function(){
+  var svg=document.getElementById('schema');
+  var wrap=document.querySelector('.schemawrap');
+  if(wrap&&svg){
+    var pad=Math.max(0,(wrap.scrollWidth-wrap.clientWidth));
+    if(pad>0)wrap.scrollLeft=Math.min(pad,svg.getBoundingClientRect().width*0.23);
+  }
+  var dots=svg?Array.prototype.slice.call(svg.querySelectorAll('.dot')):[];
+  var cur=null;
+
+  function railH(){
+    var r=document.querySelector('.rail');
+    return r?Math.round(r.getBoundingClientRect().height):0;
+  }
+  // мгновенный переход: на телефоне прыжок через полстраницы плавной прокруткой
+  // только дезориентирует, а сама анимация в части браузеров прерывается
+  function jump(y){
+    var el=document.documentElement,prev=el.style.scrollBehavior;
+    el.style.scrollBehavior='auto';
+    window.scrollTo(0,Math.max(0,Math.round(y)));
+    el.style.scrollBehavior=prev;
+  }
+  function clear(){
+    if(cur){
+      var d=svg.querySelector('.dot[data-n="'+cur+'"]');if(d)d.classList.remove('on');
+      var r=document.getElementById('p-'+cur);if(r)r.classList.remove('on');
+    }
+  }
+  function mark(n,goToRow){
+    clear();cur=n;
+    var d=svg.querySelector('.dot[data-n="'+n+'"]');if(d)d.classList.add('on');
+    var row=document.getElementById('p-'+n);
+    if(!row)return;
+    row.classList.add('on');
+    if(goToRow)jump(row.getBoundingClientRect().top+window.pageYOffset-railH()-10);
+  }
+  dots.forEach(function(d){
+    var n=d.getAttribute('data-n');
+    d.addEventListener('click',function(){mark(n,true);});
+    d.addEventListener('keydown',function(ev){
+      if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();mark(n,true);}
+    });
+  });
+
+  // клик по строке подсвечивает точку на схеме
+  Array.prototype.forEach.call(document.querySelectorAll('.pt'),function(row){
+    row.addEventListener('click',function(ev){
+      if(ev.target.closest&&ev.target.closest('a,button'))return;
+      mark(row.getAttribute('data-n'),false);
+      var box=svg.getBoundingClientRect();
+      if(box.bottom<railH()||box.top>window.innerHeight){
+        jump(box.top+window.pageYOffset-(window.innerHeight-box.height)/2);
+      }
+    });
+  });
+
+  // фильтры по этапам
+  Array.prototype.forEach.call(document.querySelectorAll('.chip'),function(c){
+    c.addEventListener('click',function(){
+      var on=c.getAttribute('aria-pressed')==='true';
+      c.setAttribute('aria-pressed',on?'false':'true');
+      var s=c.getAttribute('data-s');
+      dots.forEach(function(d){
+        if(d.classList.contains('s'+s))d.classList.toggle('off',on);
+      });
+    });
+  });
+
+  // копирование координат
+  Array.prototype.forEach.call(document.querySelectorAll('.copy'),function(b){
+    b.addEventListener('click',function(){
+      var t=b.getAttribute('data-c'),old=b.textContent;
+      function ok(){b.textContent='скопировано';b.classList.add('done');
+        setTimeout(function(){b.textContent=old;b.classList.remove('done');},1400);}
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(t).then(ok,function(){window.prompt('Координаты:',t);});
+      }else{window.prompt('Координаты:',t);}
+    });
+  });
+})();
+</script>
+</body>
+</html>
